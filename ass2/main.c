@@ -12,25 +12,33 @@ Print numbers from 1 to the user's input for "Nezz". For the multiples of "Fuzz"
 
 #include <stdio.h>
 
+//function declaration.
+void fuzzBizzNezz (int fuzz, int bizz, int nezz);
+
 int main(int argc, const char * argv[]) {
     
-    int Nezz = 100;
-    int Bizz = 3;
-    int Fizz = 5;
+    fuzzBizzNezz(3, 5, 100);
     
-    for (int i = 0; i <= Nezz; i++) {
+    return 0;
+}
+
+
+//function implementation.
+void fuzzBizzNezz (int fuzz, int bizz, int nezz){
+
+    for (int i = 1; i <= nezz; i++) {
         
-        if (i%Fizz==0 && i!=0 && i%Bizz!=0)
+        if (i%fuzz==0 && i%bizz==0)
         {
-            printf("Fizz\n");
+            printf("FuzzBuzz\n");
             
-        }else if (i%Bizz==0 && i!=0 && i%3!=0)
+        }else if (i%bizz==0)
         {
             printf("Bizz\n");
             
-        }else if (i%Fizz==0 && i%Bizz==0 && i!=0)
+        }else if (i%fuzz==0)
         {
-            printf("FizzBizz\n");
+            printf("Fuzz\n");
             
         }else
         {
@@ -38,7 +46,4 @@ int main(int argc, const char * argv[]) {
             
         }
     }
-    
-    
-    return 0;
 }
